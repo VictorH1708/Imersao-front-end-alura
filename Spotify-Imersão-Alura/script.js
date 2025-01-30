@@ -11,8 +11,8 @@ function requestApi(searchTerm) {
 
 function displayResults(result) {
     resultPlaylist.classList.add('hidden')
-    const artistName = document.getElementById('artists-name')
-    const artistImage = document.getElementById('artists-img')
+    const artistName = document.getElementById('artist-name')
+    const artistImage = document.getElementById('artist-img')
 
     result.forEach(element => {
         artistName.innerText = element.name
@@ -26,9 +26,9 @@ function displayResults(result) {
 
 document.addEventListener('input', function() {
     const searchTerm = searchInput.value.toLowerCase();
-    if (searchInput === '') {
-        resultPlaylist .classList.add('hidden');
-        resultsArtists.classList.remove('hidden');
+    if (searchTerm === '') { // Aqui você deve usar searchTerm
+        resultPlaylist.classList.remove('hidden'); // Mostrar a lista de playlists
+        resultsArtists.classList.add('hidden'); // Esconder os resultados dos artistas
         return;
     }
 
